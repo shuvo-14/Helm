@@ -1,0 +1,24 @@
+replicaCount: 1
+
+deploymentLabels:
+  app: api-server
+  run: app
+
+containerLabels:
+  app: api-server
+  run: app
+
+matchLabels:
+  app: api-server
+  run: app
+
+containerSpec:
+  name: BookapiServer
+  image: shuvo14/api-server
+  port: 8080
+
+service:
+  type: NodePort
+  port: 3200
+  nodePort: 30018
+  protocol: TCP
